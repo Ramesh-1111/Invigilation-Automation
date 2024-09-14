@@ -1,0 +1,100 @@
+<div style="display: flex">
+  <div style="width: 16.5%; background-color: #e9e9e9">
+    <app-navbar></app-navbar>
+  </div>
+  <div style="width: 83.5%; background-color: #e9e9e9">
+    <!-- Content for the right side -->
+    <div class="topbar-container">
+      <div class="user-input">
+        <form
+          action="submit"
+          [formGroup]="DetailsForm"
+          (ngSubmit)="getStaffData()"
+        >
+          <div class="staffid">
+            <input
+              type="text"
+              formControlName="StaffId"
+              placeholder="Enter Staff here..."
+            />
+            <span
+              *ngIf="
+                DetailsForm.controls['StaffId'].invalid &&
+                DetailsForm.controls['StaffId'].touched
+              "
+              class="form-valid-text"
+              style="color: red"
+              ><span
+                *ngIf="DetailsForm.controls['StaffId'].errors?.['required']"
+                >Staff ID not empty and can't contain Alphabets</span
+              ></span
+            >
+          </div>
+
+          <button
+            class="flex justify-self-end text-white bg-indigo-500 border-0 py-2 px-3 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            type="submit"
+          >
+            Allocate
+            <span class="material-symbols-outlined"> chevron_right </span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="top">
+      <h1>Staff Details And Hall Information</h1>
+    </div>
+    <div class="staff-details">
+      @for (details of StaffDetails; track details.StaffId) {
+      <div class="content-details">
+        <div class="staff-profile">
+          <img
+            src="https://www.shareicon.net/data/512x512/2016/09/15/829452_user_512x512.png"
+            alt=""
+          />
+          <div class="staff-name">
+            <h1>{{ details.Staff_2.Details.Name }}</h1>
+            <p>{{ details.Staff_2.Staffid }}</p>
+          </div>
+        </div>
+        <div class="staff-info">
+          <span
+            >Department :
+            <h3>{{ details.Staff_2.Details.Department }}</h3></span
+          >
+          <span
+            >Mobile No :
+            <h3>{{ details.Staff_2.Details.Mobile_No }}</h3></span
+          >
+          <span
+            >Email :
+            <h3>{{ details.Staff_2.Details.Email }}</h3></span
+          >
+          <span
+            >Year Of Joined :
+            <h3>{{ details.Staff_2.Details.Year_Joined }}</h3></span
+          >
+          <span
+            >Designation :
+            <h3>Assistant Professor</h3></span
+          >
+        </div>
+        <div class="ExamHall-details">
+          <span
+            >ExamHall :
+            <h3>{{ details.ExamHall }}</h3></span
+          >
+          <span
+            >Exam :
+            <h3>{{ details.ExamName }}</h3></span
+          >
+          <span
+            >Session :
+            <h3>{{ details.Session }}</h3></span
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

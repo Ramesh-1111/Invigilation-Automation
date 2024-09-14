@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const StaffService = require("./StaffService");
+const ExamHallService = require("./ExamHallService");
+const halldetails = require("./HallAllocatedDetailsservice");
+router.post("/StaffDetailsCreate", StaffService.CreateStaff);
+router.post("/ExamHallDetails", ExamHallService.createExamHall);
+router.get("/getall", halldetails.getHallDetails);
+router.get("/hallstaffDetails/:id", halldetails.gethallStaffDetails);
+module.exports = router;

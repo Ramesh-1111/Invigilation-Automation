@@ -1,0 +1,89 @@
+.topbar-container {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.top {
+  display: flex;
+  width: 100%;
+  h1 {
+    color: #1b1464;
+    font-size: 1.5rem;
+    padding-left: 50px;
+    margin: 20px 0px;
+    font-weight: 600;
+  }
+}
+.user-input,
+form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-left: 50px;
+  gap: 50px;
+}
+.staffid {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 0.8rem;
+  }
+}
+.staffid input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  background-color: #ffff;
+}
+
+.staff-details {
+  height: 380px;
+  width: 400px;
+  background-color: #ffff;
+  border-radius: 10px;
+  margin-left: 80px;
+}
+.staff-profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.staff-profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+h3 {
+  color: #71717a;
+  font-size: 15px;
+  font-weight: 500;
+}
+span {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.staff-name {
+  flex: 0.7;
+}
+.staff-info {
+  margin: 10px 0px;
+}
+.ExamHall-details {
+  border-top: 2px solid #09090b;
+  padding: 20px 5px;
+  span {
+    color: #6f1e51;
+  }
+  h3 {
+    color: #1b1464;
+  }
+}
